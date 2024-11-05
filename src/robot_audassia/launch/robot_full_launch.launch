@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="robot_audassia" type="noeud_lidar.py" name="noeud_lidar" output="screen" />
+    <node pkg="robot_audassia" type="noeud_controlleur.py" name="noeud_controlleur" output="screen" />
+    <node pkg="robot_audassia" type="noeud_rs232.py" name="noeud_rs232" output="screen" />
+</launch>
