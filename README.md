@@ -32,3 +32,18 @@ cd ${PROJECT_HOME}
 docker-compose up 
 ```
 
+## Contribute
+
+### Docker
+
+#### Build docker image
+
+`docker build -t registry.factory.hotep.team/com-audassia-prototype-ros:241108-2144 .` 
+
+## Various notes to classify
+
+```
+snap run gazebo.gz gazebo
+export ROS_MASTER_URI=http://7c08ce352ca7:11311/
+```
+
