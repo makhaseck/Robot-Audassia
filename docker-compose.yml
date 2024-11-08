@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  master:
+    #image: ros:noetic-ros-core-focal
+    image: registry.factory.hotep.team/com-audassia-prototype-ros:241108-2144 
+    #command: ["roscore"]
+    command: ["sleep", "infinity"]
+    ports:
+      - 11311:11311
+    volumes:
+      - ./catkin_ws/:/root/catkin_ws:rw
+
+  node-lidar:
+    image: registry.factory.hotep.team/com-audassia-prototype-ros:241108-2144 
+    command: ["sleep", "infinity"]
+    volumes:
+      - ./catkin_ws/:/root/catkin_ws:rw
+
+  node-controller:
+    image: registry.factory.hotep.team/com-audassia-prototype-ros:241108-2144 
+    command: ["sleep", "infinity"]
+    volumes:
+      - ./catkin_ws/:/root/catkin_ws:rw
+
+  node-rs232:
+    image: registry.factory.hotep.team/com-audassia-prototype-ros:241108-2144 
+    command: ["sleep", "infinity"]
+    volumes:
+      - ./catkin_ws/:/root/catkin_ws:rw
