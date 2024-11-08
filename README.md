@@ -11,6 +11,9 @@ Le package est nommée robot_audassia et j'ai crée noeud dans le repertoire src
 
 - docker
 - docker-compose
+- be authentified to the docker images registry: https://registry.factory.hotep.team
+  - please request a login/password to [Hotep Team](mailto:tech@hotep.team)
+  - then you could connect to this docker registry using the following command: `docker login registry.factory.hotep.team` 
 
 #### Prepare development environment
 
