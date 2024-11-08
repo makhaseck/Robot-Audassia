@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  ros-master:
+    #image: ros:noetic-ros-core-focal
+    image: registry.factory.hotep.team/com-audassia-prototype-ros:241108-2144 
+    command: ["roscore"]
+    ports:
+      - 11311:11311
+    volumes:
+      - ./catkin_ws/:/root/catkin_ws:rw
+
+  node-lidar:
+    image: registry.factory.hotep.team/com-audassia-prototype-ros:241108-2144 
+    command: ["rosrun", "robot_audassia", "noeud_lidar.py"]
+    volumes:
+      - ./catkin_ws/:/root/catkin_ws:rw
+    environmment:
+      ROS_MASTER_URI: http://ros-master:11311
+
+  node-controller:
+    image: registry.factory.hotep.team/com-audassia-prototype-ros:241108-2144 
+    #command: ["sleep", "infinity"]
+    command: ["rosrun", "robot_audassia", "noeud_controlleur.py"]
+    volumes:
+      - ./catkin_ws/:/root/catkin_ws:rw
+    environmment:
+      ROS_MASTER_URI: http://ros-master:11311
+
+  node-rs232:
+    image: registry.factory.hotep.team/com-audassia-prototype-ros:241108-2144 
+    #command: ["sleep", "infinity"]
+    command: ["rosrun", "robot_audassia", "noeud_rs232.py"]
+    volumes:
+      - ./catkin_ws/:/root/catkin_ws:rw
+    environmment:
+      ROS_MASTER_URI: http://ros-master:11311
