@@ -1,5 +1,11 @@
 <launch>
-    <node pkg="robot_audassia" type="noeud_lidar.py" name="noeud_lidar" output="screen" />
-    <node pkg="robot_audassia" type="noeud_controlleur.py" name="noeud_controlleur" output="screen" />
-    <node pkg="robot_audassia" type="noeud_rs232.py" name="noeud_rs232" output="screen" />
+    <!-- Lancer le noeud Lidar -->
+    <node pkg="robot_audassia" type="noeud_lidar.py" name="noeud_lidar" output="screen"/>
+    
+    <!-- Lancer le noeud Controlleur -->
+    <node pkg="robot_audassia" type="noeud_controlleur.py" name="noeud_controlleur" output="screen"/>
+    
+    <!-- Lancer le noeud RS232 -->
+    <node pkg="robot_audassia" type="noeud_rs232.py" name="noeud_rs232" output="screen"/>
 </launch>
+

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<robot name="mon_robot">
+<robot name="simple_robot">
 
-  <!-- Chassis -->
+  <!-- Châssis -->
   <link name="base_link">
     <visual>
       <geometry>
-        <box size="0.5 0.3 0.1"/> <!-- Dimensions du chassis -->
+        <box size="0.5 0.3 0.1"/> <!-- Dimensions du châssis -->
       </geometry>
       <material name="blue">
         <color rgba="0 0 1 1"/>
@@ -37,39 +37,20 @@
     </visual>
   </link>
 
-  <!-- Capteur LIDAR -->
-  <link name="lidar_link">
-    <visual>
-      <geometry>
-        <cylinder radius="0.03" length="0.05"/>
-      </geometry>
-      <material name="gray">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
-    </visual>
-  </link>
-
-  <!-- Joint du chassis a la roue gauche -->
+  <!-- Joint du châssis à la roue gauche -->
   <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel"/>
-    <origin xyz="-0.2 0.1 0" rpy="0 1.5708 0"/> <!-- Position de la roue gauche -->
+    <origin xyz="-0.2 0.1 0" rpy="0 1.5708 0"/>
     <axis xyz="0 1 0"/>
   </joint>
 
-  <!-- Joint du chassis a la roue droite -->
+  <!-- Joint du châssis à la roue droite -->
   <joint name="right_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="right_wheel"/>
-c    <origin xyz="0.2 0.1 0" rpy="0 1.5708 0"/> <!-- Position de la roue droite -->
+    <origin xyz="0.2 0.1 0" rpy="0 1.5708 0"/>
     <axis xyz="0 1 0"/>
-  </joint>
-
-  <!-- Joint du chassis au LIDAR -->
-  <joint name="lidar_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="lidar_link"/>
-    <origin xyz="0 0 0.2" rpy="0 0 0"/> <!-- Position du LIDAR au-dessus du chassis -->
   </joint>
 
 </robot>

@@ -1,6 +1,15 @@
 <launch>
-    <node pkg="robot_audassia" type="noeud_lidar.py" name="noeud_lidar" output="screen" />
-    <node pkg="robot_audassia" type="noeud_controlleur.py" name="noeud_controlleur" output="screen" />
-    <node pkg="robot_audassia" type="noeudrs232.py" name="noeudrs232" output="screen" />
+  <!-- Lancer Gazebo avec le modole URDF du robot -->
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find robot_audassia)/urdf/model_robot.urdf"/>
+
+  <!-- Lancer Gazebo avec un monde specifique -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find gazebo_ros)/worlds/empty.world"/>
+  </include>
+
+  <!-- Lancer les noeuds de controle du robot (ex : moteurs, lidar, RS232) -->
+  <node pkg="robot_audassia" type="noeud_controlleur.py" name="noeud_controlleur" />
+  <node pkg="robot_audassia" type="noeud_lidar.py" name="noeud_lidar" />
+  <node pkg="robot_audassia" type="noeud_rs232.py" name="noeud_rs232" />
 </launch>
 

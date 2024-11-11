@@ -1,0 +1,9 @@
+Global Options:
+  Fixed Frame: base_link
+
+Displays:
+  - Name: RobotModel
+    Enabled: true
+    Class: rviz/RobotModel
+    Robot Description: robot_description
+

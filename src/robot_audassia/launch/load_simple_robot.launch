@@ -1,8 +1,6 @@
-<?xml version="1.0"?>
 <launch>
   <!-- Charger la description URDF du robot dans ROS -->
-  <arg name="model"/>
-  <param name="robot_description" command="$(find xacro)/xacro $(find robot_audassia)/urdf/model_robot.urdf"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(find robot_audassia)/urdf/simple_robot.urdf"/>
 
   <!-- Lancer Gazebo avec un monde vide -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -12,12 +10,7 @@
   <!-- Lancer le noeud robot_state_publisher pour publier les transformations du robot -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-  <!-- Lancer le noeud noeud_lidar qui publie les donnees du LIDAR -->
-  <node name="noeud_lidar" pkg="robot_audassia" type="noeud_lidar.py" output="screen">
-    <param name="lidar_topic" value="robot/lidar/scan"/>
-  </node>
-
-  <!-- Lancer RViz pour visualiser le robot avec le fichier de configuration modifié -->
+  <!-- Lancer RViz pour visualiser le robot -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_audassia)/rviz/config_rviz.rviz" required="true" />
 </launch>
 
