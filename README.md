@@ -1,7 +1,7 @@
 # Robot-audassia
 Ce projet vise à développer un prototype virtuel de robot autonome avec un lidar 2D SICK LMS100 et un contrôleur roboteq MD2230. Le tout est simulé dans un environnement virtuel utilisant Gazebo et RViz. Les données des capteurs et les commandes sont échangées via des nœuds ROS, et la communication est établie à travers une connexion Ethernet pour le lidar et une liaison RS232 via Ethernet pour le contrôleur.
 Prérequis :
-ROS (Melodic ou Noetic, selon la version compatible avec Ubuntu 20.04)
+ROS (Noetic, la version compatible avec Ubuntu 20.04)
 Gazebo et RViz
 Docker et VcXsrv (si vous utilisez un conteneur Docker pour exécuter ROS sur Windows)
 Git pour cloner le dépôt
