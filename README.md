@@ -37,6 +37,9 @@ rosrun robot_audassia noeud_controlleur.py
 3. Nœud noeudrs232.py
 Ce nœud gère la liaison série RS232 pour la communication via Ethernet. Pour l'exécuter :
 rosrun robot_audassia noeudrs232.py
+Communication des différentes noeuds avec la commande "rqt_graph" :
+![image](https://github.com/user-attachments/assets/af6c7c9a-90c4-4cdc-aede-cbdaf7c69cae)
+
 
 
 Auteurs
